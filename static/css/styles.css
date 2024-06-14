@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Forum&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Forum', cursive;
+    font-size: 2rem;
+    color: #333;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #007BFF;
+}
+
+.section {
+    padding: 40px 5%;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative; /* Ensure pseudo-elements are positioned correctly */
+    overflow: hidden; /* Prevent pseudo-elements from overflowing the section */
+}
+
+.quote-section {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1549793959-284bccc3331b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: top;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+h2 {
+    font-family: 'Forum', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+p, table {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+ul.benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.benefits-list li {
+    text-align: left;
+    padding: 10px 0;
+    position: relative;
+    margin-left: 10%;
+}
+ul.benefits-list li::before {
+    content: '•';
+    color: #007BFF;
+    font-size: 2rem;
+    position: absolute;
+    left: -20px;
+    top: -5px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    margin: 20px 0;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.testimonial .author {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.faq-item {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.faq-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+#author-info {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Drag and Drop Styles */
+.dropzone {
+    border: 2px dashed #007BFF;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropzone.dragover {
+    background-color: #e0f7ff;
+}
+
+.dropzone p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007BFF;
+}
+
+.dropzone input {
+    display: none;
+}
+
+img.error-section {
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}

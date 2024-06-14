@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Zen</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">SEO Zen</div>
+        <nav class="nav">
+            <a href="#upload-section">Загрузить файл</a>
+            <a href="#quote-section">Цитаты</a>
+            <a href="#instruction-section">Инструкция</a>
+            <a href="#testimonial-section">Отзывы</a>
+            <a href="#faq-section">FAQ</a>
+            <a href="#contact-section">Контакты</a>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Блок приветствия и краткого описания -->
+        <section id="intro-section" class="section">
+            <h2>Добро пожаловать в SEO Zen</h2>
+            <p>Ваш <span style="color:#007BFF">незаменимый</span> помощник в перемножении ключевых слов!</p>
+            <p>SEO Zen – это уникальный инструмент, созданный для того, чтобы упростить и ускорить процесс генерации ключевых фраз для вашего сайта или рекламной кампании. Наш сервис позволяет вам перемножить до 10 групп ключевых слов за считанные минуты, создавая сотни и тысячи уникальных комбинаций, которые помогут вам достичь максимальной видимости в поисковых системах.</p>
+        </section>
+
+        <!-- Форма для загрузки и отправки файлов -->
+        <section id="upload-section" class="section">
+            <h2>Загрузите ваш файл</h2>
+            <form id="upload-form" action="/api/create_kernel/" method="post" enctype="multipart/form-data">
+                <div class="dropzone" id="dropzone">
+                    <p id="dropzone-text">Перетащите файл сюда или нажмите для выбора</p>
+                    <input type="file" id="fileInput" name="file" accept=".csv, .xls, .xlsx" required>
+                </div>
+                <button type="submit" style="margin-top: 20px">Отправить</button>
+            </form>
+        </section>
+
+        <!-- Блок с мотивационными цитатами -->
+        <section id="quote-section" class="section quote-section">
+            <h2>Заряд мотивации</h2>
+            <div id="quote-block">
+                <p id="quote">{{ quote }}</p>
+                <button onclick="toggleAuthor()">Узнать автора</button>
+                <div id="author-info" style="display: none;">
+                    <h3>{{ author }}</h3>
+                    <p>{{ author_wiki }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Инструкция по использованию сервиса -->
+        <section id="instruction-section" class="section">
+            <h2>Инструкция по подготовке файла</h2>
+            <p>Ваш файл должен быть в одном из следующих форматов: CSV, XLS, XLSX.</p>
+            <p>Каждая колонка файла должна содержать слова или фразы, которые вы хотите использовать для перемножения.</p>
+            <p>Пример:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Колонка 1</th>
+                        <th>Колонка 2</th>
+                        <th>Колонка 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>слово1</td>
+                        <td>слово2</td>
+                        <td>слово3</td>
+                    </tr>
+                    <tr>
+                        <td>слово4</td>
+                        <td>слово5</td>
+                        <td>слово6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Преимущества использования SEO Zen -->
+        <section id="benefits-section" class="section benefits-section">
+            <h2>Преимущества использования SEO Zen</h2>
+            <h3>Почему стоит выбрать SEO Zen?</h3>
+            <ul class="benefits-list">
+                <li><span style="color:#007BFF">Экономия времени:</span> Забудьте о долгих часах ручного составления списков ключевых слов. Наш инструмент сделает всю работу за вас в мгновение ока.</li>
+                <li><span style="color:#007BFF">Повышение эффективности:</span> С помощью наших мощных алгоритмов вы получите исчерпывающий список ключевых слов, который увеличит ваши шансы на успешное продвижение в поисковых системах.</li>
+                <li><span style="color:#007BFF">Простота использования:</span> Интуитивно понятный интерфейс и быстрый доступ к функциям позволяют даже новичкам в SEO быстро освоить наш сервис и получить результаты.</li>
+            </ul>
+        </section>
+
+        <!-- Блок с отзывами пользователей -->
+        <section id="testimonial-section" class="section">
+            <h2>Отзывы пользователей</h2>
+            <div class="testimonial">
+                <p>"SEO Zen значительно улучшил мою работу с ключевыми словами. Рекомендую!"</p>
+                <p class="author">- Иван Иванов</p>
+            </div>
+            <div class="testimonial">
+                <p>"Прекрасный инструмент для SEO специалистов. Экономит массу времени!"</p>
+                <p class="author">- Анна Петрова</п>
+            </div>
+        </section>
+
+        <!-- Блок с часто задаваемыми вопросами -->
+        <section id="faq-section" class="section">
+            <h2>Часто задаваемые вопросы (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Как загрузить файл?</h3>
+                <p>Вы можете загрузить файл, нажав на кнопку "Отправить" в разделе "Загрузите ваш файл".</p>
+            </div>
+            <div class="faq-item">
+                <h3>Какие форматы файлов поддерживаются?</h3>
+                <p>Поддерживаются форматы CSV, XLS и XLSX.</p>
+            </div>
+        </section>
+
+        <!-- Контактная информация и форма обратной связи -->
+        <section id="contact-section" class="section">
+            <h2>Свяжитесь с нами</h2>
+            <p>Если у вас есть вопросы или предложения, пожалуйста, свяжитесь со мной через email или telegram.</p>
+            <ul>
+                <p>Telegram: <a href="https://t.me/Artemka081">@Artemka081</a></p>
+                <p>Email: artm_tereshin@vk.com</p>
+            </ul>
+        </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 SEO Zen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleAuthor() {
+            var authorInfo = document.getElementById("author-info");
+            if (authorInfo.style.display === "none" || authorInfo.style.display === "") {
+                authorInfo.style.display = "block";
+            } else {
+                authorInfo.style.display = "none";
+            }
+        }
+
+        // Drag and Drop functionality
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        const dropzoneText = document.getElementById('dropzone-text');
+
+        dropzone.addEventListener('click', () => fileInput.click());
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+
+        dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+            updateDropzoneText();
+        });
+
+        fileInput.addEventListener('change', updateDropzoneText);
+
+        function updateDropzoneText() {
+            const file = fileInput.files[0];
+            if (file) {
+                dropzoneText.textContent = `Выбрано: ${file.name}`;
+            } else {
+                dropzoneText.textContent = 'Перетащите файл сюда или нажмите для выбора';
+            }
+        }
+    </script>
+</body>
+</html>
